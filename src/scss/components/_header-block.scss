@@ -1,0 +1,39 @@
+@import './const.scss';
+@import './adaptive.scss';
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-height: 60px;
+  padding: 13px 0px;
+  background-color: $white;
+  @include for-mobile() {
+    padding: 13px 16px;
+  }
+
+  @include for-tablets() {
+    padding: 13px 32px;
+  }
+
+  @include for-laptop() {
+    padding: 13px 60px;
+  }
+
+  &-logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-btn-container {
+    display: flex;
+    :first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &-btn {
+    @extend %DefaultButton;
+  }
+  &-btn:hover {
+    @extend %DefaultHover;
+  }
+}

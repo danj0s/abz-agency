@@ -1,0 +1,57 @@
+.input-container {
+    
+    position: relative;
+    margin: 12px 0px;
+  }
+  
+  input {
+    height: 48px;
+    width: 280px;
+    border: 1px solid $inputBorder;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 16px;
+    opacity: 1;
+  color: $textInput;
+  background-color: $grayBackground;
+
+  }
+  
+  .label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  input, .label .text {
+    font-family: 'Nunito';
+  font-size: 12px;
+  }
+  
+  .label .text {
+    transition: all 0.15s ease-out;
+    color: $textInput;
+  
+  }
+  
+  input:focus {
+    outline: none;
+    border: 2px solid $inputBorder;
+  }
+  
+  input:focus + .label .text, :not(input[value=""]) + .label .text {
+    font-size: 12px;
+    transform: translate(0, -150%);
+    background-color: $grayBackground;
+    padding-left: 4px;
+    padding-right: 4px;
+
+  }
+  
+  input:focus + .label .text {
+    color: $textInput;
+  }
