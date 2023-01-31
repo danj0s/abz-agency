@@ -1,0 +1,30 @@
+@import './const.scss';
+@import './adaptive.scss';
+$bg-image: url('../../img/png/backgroundImage.png');
+
+.info-block {
+  display: flex;
+  height: 650px;
+  background: $bg-image;
+  margin-bottom: 140px;
+
+  @include for-mobile() {
+    max-height: 500px;
+  }
+  @include for-tablets() {
+    max-height: 500px;
+  }
+
+  &-textContainer {
+    max-width: 380px;
+    margin: auto;
+    color: $white;
+    text-align: center;
+    &-heading {
+      @extend %H1;
+    }
+    &-text {
+      @extend %Body16;
+    }
+  }
+}
