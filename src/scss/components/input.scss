@@ -1,57 +1,72 @@
-.input-container {
-    
-    position: relative;
-    margin: 12px 0px;
-  }
-  
-  input {
-    height: 48px;
-    width: 280px;
-    border: 1px solid $inputBorder;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 16px;
-    opacity: 1;
+.input-wrapper {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  height: 100%;
+  position: relative;
+}
+
+.input {
+  height: 48px;
+  min-width: 380px;
+  border: 1px solid $inputBorder;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+  opacity: 1;
   color: $textInput;
   background-color: $grayBackground;
+  &-error {
+    border: 1px solid red;
+  }
+  &-error:focus {
+    border: 1px solid red;
+  }
+}
 
+.label {
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  &-error {
+    color: red;
   }
-  
-  .label {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 16px;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
+  &-error:focus {
+    color: red;
   }
-  
-  input, .label .text {
-    font-family: 'Nunito';
+}
+
+input,
+.label .text {
+  @extend %HelperText;
+  font-weight: 500;
+}
+
+.label .text {
+  transition: all 0.15s ease-out;
+  color: $textInput;
+  &-error {
+    color: red;
+  }
+  &-error:focus {
+    color: red;
+  }
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid $inputBorder;
+}
+
+input:focus + .label .text,
+:not(input[value='']) + .label .text {
   font-size: 12px;
-  }
-  
-  .label .text {
-    transition: all 0.15s ease-out;
-    color: $textInput;
-  
-  }
-  
-  input:focus {
-    outline: none;
-    border: 2px solid $inputBorder;
-  }
-  
-  input:focus + .label .text, :not(input[value=""]) + .label .text {
-    font-size: 12px;
-    transform: translate(0, -150%);
-    background-color: $grayBackground;
-    padding-left: 4px;
-    padding-right: 4px;
-
-  }
-  
-  input:focus + .label .text {
-    color: $textInput;
-  }
+  transform: translate(0, -150%);
+  background-color: $grayBackground;
+  padding-left: 4px;
+  padding-right: 4px;
+}

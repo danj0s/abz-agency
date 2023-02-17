@@ -1,11 +1,18 @@
 @import './const.scss';
 @import './adaptive.scss';
+
+.header-wrapper {
+  width: 100%;
+  background-color: $white;
+  max-height: 60px;
+}
 .header {
+  max-width: $MAX_CONTAINER_WIDTH;
+  margin: auto;
   display: flex;
   justify-content: space-between;
-  max-height: 60px;
   padding: 13px 0px;
-  background-color: $white;
+
   @include for-mobile() {
     padding: 13px 16px;
   }
@@ -21,19 +28,22 @@
   &-logo-container {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
-  &-btn-container {
+  &-link-container {
     display: flex;
-    :first-child {
+    > :first-child {
       margin-right: 10px;
     }
   }
 
-  &-btn {
+  &-link {
+    line-height: 34px;
     @extend %DefaultButton;
+    text-align: center;
   }
-  &-btn:hover {
+  &-link:hover {
     @extend %DefaultHover;
   }
 }

@@ -1,20 +1,14 @@
-// $nunito: url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
 @import './components/const.scss';
 * {
   box-sizing: border-box;
-overflow-x: hidden;
+  overflow-x: hidden;
 }
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-weight: 400;
   background-color: $grayBackground;
-  @font-face {
-    font-family: 'Nunito';
-    src: url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
-  }
-  font-family: 'Nunito', sans-serif;
-  
 }
 div,
 span,
