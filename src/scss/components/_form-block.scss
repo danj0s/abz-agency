@@ -1,0 +1,33 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.form-heading-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  @extend %H1;
+}
+
+.submit-button-wrapper {
+  text-align: center;
+}
+.submit-button {
+  @extend %DefaultButton;
+}
+.disable-submit-button {
+  @extend %DisableButton;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  :first-child {
+    margin: 0;
+  }
+}

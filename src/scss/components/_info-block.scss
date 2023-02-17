@@ -4,9 +4,10 @@ $bg-image: url('../../img/png/backgroundImage.png');
 
 .info-block {
   display: flex;
+  width: 100vw;
+  max-width: $MAX_CONTAINER_WIDTH;
   height: 650px;
   background: $bg-image;
-  margin-bottom: 140px;
 
   @include for-mobile() {
     max-height: 500px;
@@ -15,7 +16,7 @@ $bg-image: url('../../img/png/backgroundImage.png');
     max-height: 500px;
   }
 
-  &-textContainer {
+  &-container {
     max-width: 380px;
     margin: auto;
     color: $white;

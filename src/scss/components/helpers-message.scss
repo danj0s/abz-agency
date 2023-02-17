@@ -1,0 +1,12 @@
+.error-message {
+  @extend %HelperText;
+  color: red;
+  padding: 4px 16px 0;
+  position: absolute;
+}
+.helper-message {
+  @extend %HelperText;
+  color: $textInput;
+  padding: 4px 16px 0;
+  position: absolute;
+}

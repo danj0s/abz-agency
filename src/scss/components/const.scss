@@ -1,8 +1,12 @@
+//width
+
+$MAX_CONTAINER_WIDTH: 1170px;
+
 //main
 
 $white: #ffffff;
 $black: #000000de;
-
+$black87: rgba(0, 0, 0, 0.87);
 //backgrounds
 
 $grayBackground: #e5e5e5;
@@ -12,7 +16,7 @@ $transparentBackground: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 
 //inputs
 
 $lightGrayInput: #f8f8f8;
-$textInput: #7E7E7E;
+$textInput: #7e7e7e;
 
 //borders
 
@@ -24,35 +28,42 @@ $activeBtn: #f4e041;
 $hoverBtn: #ffe302;
 $disableBtn: #b4b4b4;
 
+//radio-btn
+$radioBtn: #00bdd3;
 //loader
 $loaderColor: #00bdd3;
 
 //Text
 $font-famile: 'Nunito';
 
-%H1 {
+%DefaultTextProp {
   font-family: 'Nunito';
   font-weight: 400;
+}
+%H1 {
+  @extend %DefaultTextProp;
   font-size: 40px;
-  line-height: 40px;
-overflow-y: hidden;
-
+  overflow-y: hidden;
 }
 %Body16 {
-  font-family: 'Nunito';
-  font-weight: 400;
+  @extend %DefaultTextProp;
   font-size: 16px;
-  line-height: 26px;
+}
+%HelperText {
+  @extend %DefaultTextProp;
+  font-size: 12px;
 }
 
 //Button
 %DefaultButton {
+  @extend %Body16;
   width: 100px;
   height: 34px;
   border-radius: 80px;
   cursor: pointer;
   border: none;
   background: $activeBtn;
+  color: $black87;
 
   transition-duration: 0.4s;
 }
@@ -60,6 +71,20 @@ overflow-y: hidden;
 %DefaultHover {
   background: $hoverBtn;
 }
+
+%DisableButton {
+  @extend %Body16;
+  width: 100px;
+  height: 34px;
+  border-radius: 80px;
+  cursor: pointer;
+  border: none;
+  background: $disableBtn;
+  color: $white;
+
+  transition-duration: 0.4s;
+}
+
 //Loader
 .loader {
   width: 48px;
@@ -80,4 +105,3 @@ overflow-y: hidden;
     transform: rotate(360deg);
   }
 }
-

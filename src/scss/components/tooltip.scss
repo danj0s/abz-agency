@@ -1,0 +1,6 @@
+@import './const.scss';
+.tooltips {
+  @extend %Body16;
+  background-color: blue;
+  width: max-content;
+}

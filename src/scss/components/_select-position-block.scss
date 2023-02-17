@@ -1,0 +1,59 @@
+.position-container {
+  margin-top: 43px;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-lable {
+  @extend %Body16;
+}
+.input-select-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-select-label {
+  @extend %Body16;
+
+  cursor: pointer;
+}
+
+.select-wrapper {
+  padding: 0.5rem;
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: '';
+        background: $grayBackground;
+        border-radius: 100%;
+        border: 1px solid darken($grayBackground, 25%);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        margin-right: 12px;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .radio-label {
+        &:before {
+          background-color: $radioBtn;
+          box-shadow: inset 0 0 0 4px $grayBackground;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: $radioBtn;
+        }
+      }
+    }
+  }
+}
