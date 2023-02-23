@@ -5,18 +5,15 @@ import { FormErrorMessage } from '../../../../FormMessage';
 import { TCreateRequestSchema } from '../schema';
 
 const DragAndDrop = () => {
-  const { register, setValue, getValues, control } = useFormContext<TCreateRequestSchema>();
+  const { register, setValue, control } = useFormContext<TCreateRequestSchema>();
 
   const [dragActive, setDragActive] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<FileList>();
   const photoControl = useController({ control, name: 'photo' });
-  const error = photoControl.formState.errors.photo;
 
   useEffect(() => {
     if (!uploadedFile) return;
-    setValue('photo', uploadedFile);
-    console.log(getValues('photo'), 'uploadedFile');
-    console.log(error, 'error');
+    setValue('photo', uploadedFile, { shouldValidate: true });
   }, [uploadedFile]);
 
   const handleDrag = function (e: React.SyntheticEvent) {
