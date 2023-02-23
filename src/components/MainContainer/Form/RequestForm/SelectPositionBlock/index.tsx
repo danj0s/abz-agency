@@ -21,6 +21,7 @@ const SelectPositionBlock = () => {
           positionData.positions.map((el) => {
             return (
               <InputRadio
+                key={el.id}
                 value={el.id.toString()}
                 label={el.name}
                 checked={el.id === selectPosition}
